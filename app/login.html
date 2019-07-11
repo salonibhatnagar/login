@@ -1,0 +1,17 @@
+<div class="container">
+    <div style="padding-left: 70px; padding-right:70px" class="border border-success">
+<h2>Login........</h2>
+<form  #loginForm="ngForm" (ngSubmit)="login()">
+<div class="form-group">
+<label for="name">Enter User Name:-</label>
+<input type="text" class="form-control"  name="EId" id="id" [(ngModel)]="userName" #idcontrol="ngModel"  aria-describedby="idHelp" placeholder="User Name" required>
+<small id="idHelp" class="form-text text-muted" *ngIf="idcontrol.touched && idcontrol.invalid">*User Name Required.</small>
+</div>
+<div class="form-group">
+    <label for="pass">Enter Password:-</label>
+    <input type="password" class="form-control"  name="Epas" id="pass" [(ngModel)]="password" #passcontrol="ngModel"  aria-describedby="idHelp" placeholder="Password" required>
+    <small id="passHelp" class="form-text text-muted" *ngIf="passcontrol.touched && passcontrol.invalid">*Password Required.</small>
+    </div>
+<button  type="submit" value="login" [disabled]="loginForm.invalid" class="btn btn-success">Login</button>
+</form>
+</div></div>
